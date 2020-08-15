@@ -17,12 +17,6 @@ module.exports = {
         query: {
           presets: ['@babel/react', '@babel/env']
         }
-        // use: {
-        //   loader: "babel-loader",
-        //   options: {
-        //     presets: ['@babel/react', '@babel/env']
-        //   }
-        // }
       },
     ]
   }
