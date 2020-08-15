@@ -7,12 +7,11 @@ const app = express();
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
-app.use(express.static(__dirname + '/../public'));
+//REMEMBER TO ADD STATIC PATH
 
 //REMEMBER TO FIX FIND ONE BELOW!!!!!!!!!!!!
-app.get('/api/mediaData/:id', (req, res) => {
-  let id = req.params.id
-  mongoModel.GameModel.findOne({id})
+app.get('/videoData', (req, res) => {
+  mongoModel.GameModel.findOne({id: 1})
     .then((data) => {
       res.json(data);
     })
@@ -22,10 +21,10 @@ app.get('/api/mediaData/:id', (req, res) => {
 })
 
 
-const port = process.env.PORT || 3001;
+const port = 3001;
 
 app.listen(port, () => {
-  console.log(`SERVER RUNNING ON: ${port}`);
+  console.log(`listening on port: ${port}`);
 });
 
 

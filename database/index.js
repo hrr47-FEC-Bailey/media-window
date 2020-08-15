@@ -20,5 +20,6 @@ const save = (data) => {
 }
 
 
+
 module.exports.save = save;
 module.exports.GameModel = GameModel;

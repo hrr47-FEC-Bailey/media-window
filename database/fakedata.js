@@ -33,7 +33,7 @@ function generateData() {
   }
   return games;
 }
-var seededData = generateData();
+var test = generateData();
 
-mongoModel.save(seededData);
+mongoModel.save(test);
 
