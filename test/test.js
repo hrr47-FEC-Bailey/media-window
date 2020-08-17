@@ -13,10 +13,10 @@ describe('API calls', () => {
         expect(res.data.photoArr).to.exist;
         expect(res.data.description).to.exist;
         done();
-      })
-      .catch((err) => {
-        expect(err).to.not.exist;
       });
+      // .catch((err) => {
+      //   expect(err).to.not.exist;
+      // });
   });
 
 });
