@@ -6,7 +6,7 @@ const CurrentMediaPlayer = (props) => {
   if (arr.indexOf('jpeg') > -1) {
     return (
       <div>
-      <img width="600" height="337" src={props.currentMedia }/>
+      <img width="600" height="337" src={props.currentMedia}/>
     </div>
     )
   } else {
