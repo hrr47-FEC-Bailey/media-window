@@ -72,20 +72,14 @@ class App extends React.Component {
     if (arr.indexOf('jpeg') > -1) {
       if (currentIndex === 0) {
         this.borderSelect(this.state.video[0].video);
-        this.setState({
-          currentMedia: this.state.video[0].video,
-        });
+        this.changeMedia(this.state.video[0].video);
       } else {
         this.borderSelect(this.state.images[currentIndex - 1].image);
-        this.setState({
-          currentMedia: this.state.images[currentIndex - 1].image,
-        });
+        this.changeMedia(this.state.images[currentIndex - 1].image);
       }
     } else if (arr.indexOf('jpeg') < 0) {
       this.borderSelect(this.state.images[lastIndex].image);
-      this.setState({
-        currentMedia: this.state.images[lastIndex].image,
-      });
+      this.changeMedia(this.state.images[lastIndex].image);
     }
   }
 
@@ -102,20 +96,14 @@ class App extends React.Component {
     if (arr.indexOf('jpeg') > -1) {
       if (this.state.images[currentIndex].image !== this.state.images[lastIndex].image) {
         this.borderSelect(this.state.images[currentIndex + 1].image);
-        this.setState({
-          currentMedia: this.state.images[currentIndex + 1].image,
-        });
+        this.changeMedia(this.state.images[currentIndex + 1].image);
       } else if (this.state.images[currentIndex].image === this.state.images[this.state.images.length -1].image) {
         this.borderSelect(this.state.video[0].video);
-        this.setState({
-          currentMedia: this.state.video[0].video,
-        });
+        this.changeMedia(this.state.video[0].video);
       }
     } else {
       this.borderSelect(this.state.images[0].image);
-      this.setState({
-        currentMedia: this.state.images[0].image,
-      });
+      this.changeMedia(this.state.images[0].image);
     }
   }
 

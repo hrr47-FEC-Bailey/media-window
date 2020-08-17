@@ -6,7 +6,7 @@ const gameSchema = new mongoose.Schema({
   title: String,
   description: String,
   videoArr: Array,
-  photoArr: Array
+  photoArr: Array,
 });
 
 const GameModel = mongoose.model('GameModel', gameSchema);
