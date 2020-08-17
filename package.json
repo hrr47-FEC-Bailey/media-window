@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "react-dev": "webpack -d --watch",
+    "build-db": "webpack -d",
     "start": "nodemon server/index.js",
     "seed": "node database/seed.js",
     "build": "webpack --mode production",
