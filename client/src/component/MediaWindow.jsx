@@ -7,7 +7,7 @@ import MediaList from './MediaList.jsx';
 import Title from './Title.jsx';
 
 
-class App extends React.Component {
+class MediaWindow extends React.Component {
   constructor(props) {
     super(props);
 
@@ -31,7 +31,7 @@ class App extends React.Component {
   }
 
   getData() {
-    axios.get('/api/mediaData/2')
+    axios.get('http://localhost:3001/api/mediaData/2')
     .then(({data}) => {
       let imagesArr = [];
       let videoArr = [];
@@ -163,4 +163,4 @@ class App extends React.Component {
   }
 }
 
-export default App;
+export default MediaWindow;

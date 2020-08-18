@@ -1,16 +1,21 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const cors = require('cors');
+
 const mongoModel = require('../database/index');
+
 const app = express();
 
-
+const corsOptions = {
+  origin: 'http://localhost:3000',
+  optionsSuccess: 200,
+};
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 app.use(express.static(__dirname + '/../public'));
 
-//REMEMBER TO FIX FIND ONE BELOW!!!!!!!!!!!!
-app.get('/api/mediaData/:id', (req, res) => {
+app.get('/api/mediaData/:id', cors(corsOptions), (req, res) => {
   let id = req.params.id
   mongoModel.GameModel.findOne({id})
     .then((data) => {
