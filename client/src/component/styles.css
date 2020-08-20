@@ -12,21 +12,31 @@ font-size: 12px;
 
 .game_title {
   padding-top: 0px;
-  max-width: 948px;
   margin: 0 auto;
   color: white;
   font-size: 26px;
   font-family: Motiva Sans, Sans-Serif;
   line-height: 32px;
 }
-
+/* .col_wrapper {
+  display: inline-block;
+  flex-direction: row;
+  justify-content: center;
+} */
 .left_col {
-  width: 616px;
   float: left;
   display: block;
   margin-right: 16px;
   position: relative;
-  /* background-color: #000000; */
+  margin-top: 5px;
+}
+
+.right_col {
+  float: left;
+  display: inline-block;
+  margin-right: 16px;
+  /* position: relative; */
+  margin-top: 5px;
 }
 
 .main_image {
@@ -34,6 +44,14 @@ font-size: 12px;
   flex-direction: column;
   justify-content: center;
   opacity: 1;
+}
+
+.title_image {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  opacity: 1;
+
 }
 
 .scroll_strip {
@@ -45,7 +63,7 @@ font-size: 12px;
 
 .grid {
   width: 1202px;
-  position: absolute;
+  position: relative;
 }
 
 .row {
@@ -55,57 +73,33 @@ font-size: 12px;
 }
 
 
-.row::-webkit-scrollbar {
+::-webkit-scrollbar {
   height: 18px;
-  background: transparent;
-  overflow: visible;
-}
-/* Arrows on Scrollbar */
-.row::-webkit-scrollbar-button {
-  background: rgb(247, 250, 253);
-  background-size: 10px;
-  /* background-repeat: no-repeat;
-  background-position: center center; */
-  /* -webkit-box-shadow: inset 1px 1px 2px rgba(0,0,0,0.2); */
-  width: 15px;
-  border-radius: 5px;
-}
-/* Left */
-.row::-webkit-scrollbar-button:horizontal:decrement
-{
-border-width: 10px 20px 10px 0;
-border-color:  #407899;
-}
-/* Right */
-.row::-webkit-scrollbar-button:horizontal:increment
-{
-border-width: 10px 0 10px 20px;
-border-color:  #407899;
+  width: 5px;
 }
 
-.row::-webkit-scrollbar-track {
-  border-radius: 3px;
-  width: 5px;
-  height: 20px;
+
+::-webkit-scrollbar-track {
+  background: #16202d !important;
+  border: 1px solid #16202d !important;
 }
-/* Handle */
-.row::-webkit-scrollbar-thumb {
+
+::-webkit-scrollbar-thumb {
   width: 10px;
   height: 15px;
   background-color: #434953;
-  border-radius: 10px;
-  /* z-index: 12; */
+  border-radius: 3px;
   border: 4px solid rgba(0, 0, 0, 0);
   background-clip: padding-box;
-  /* transition: background-color .32s ease-in-out; */
-  /* min-height: 32px; */
 }
-.row::-webkit-scrollbar-track {
+
+
+::-webkit-scrollbar-track {
     background: #16202D !important;
     border: 1px solid #16202D !important;
 }
-/* Handle on hover */
-.row::-webkit-scrollbar-thumb:hover {
+
+::-webkit-scrollbar-thumb:hover {
   background: #417a9b;
 }
 
@@ -149,43 +143,73 @@ border-color:  #407899;
 
 .scroll_row {
   display: flex;
-  height: 10px;
+  height: 18px;
 }
-
+/* vertical-align: middle; */
 .scroll_col {
-  line-height: 10px;
-  vertical-align: middle;
-}
-
-.prev {
-  padding-top: 10px;
-  padding-bottom: 10px;
-  height: 100%;
-  cursor: pointer;
-  color: white;
-  transition: 0.6s ease;
-  margin-right: 5px;
-  background-color: rgba( 35, 60, 81, 0.4 );
-  /* position: absolute; */
+  position: relative;
+  width: 38px;
   border-radius: 3px;
 }
 
-.next {
-  padding-top: 10px;
-  padding-bottom: 10px;
-  height: 100%;
+
+.prev {
+  position: absolute;
+  width: 38px;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  border-radius: 3px;
   cursor: pointer;
   color: white;
-  transition: 0.6s ease;
-  margin-left: 5px;
   background-color: rgba( 35, 60, 81, 0.4 );
 }
 
-.prev:hover {
+.prev span {
+  display: inline-block;
+  background-position: -18px 0px;
+  background-repeat: no-repeat;
+  background-image:url('https://store.steampowered.com/public/images/v6/icon_cluster_controls.png');
+  width: 9px;
+  height: 7px;
+  margin-left: 13px;
+  margin-top: 5px;
+}
+
+
+.next {
+  position: absolute;
+  width: 38px;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  border-radius: 3px;
+  cursor: pointer;
+  color: white;
+  background-color: rgba( 35, 60, 81, 0.4 );
+}
+
+.next span {
+  display: inline-block;
+  background-position: -9px 0px;
+  background-repeat: no-repeat;
+  background-image:url('https://store.steampowered.com/public/images/v6/icon_cluster_controls.png');
+  width: 9px;
+  height: 7px;
+  margin-left: 15px;
+  margin-top: 5px;
+}
+.prev:hover  {
   background: #417a9b;
 }
 .next:hover {
   background: #417a9b;
+}
+.prev:hover > span {
+  background-position: -18px -7px;
+}
+.next:hover > span {
+  background-position: -9px -7px;
 }
 
 

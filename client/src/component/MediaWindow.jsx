@@ -5,6 +5,7 @@ import styles from './styles.css';
 import CurrentMediaPlayer from './CurrentMediaPlayer.jsx';
 import MediaList from './MediaList.jsx';
 import Title from './Title.jsx';
+import CurrentTitleImage from './CurrentTitleImage.jsx';
 
 
 class MediaWindow extends React.Component {
@@ -138,22 +139,28 @@ class MediaWindow extends React.Component {
     return (
       <div className={styles.body}>
         <Title currentGame={this.state.data} />
-        <div className={styles.left_col}>
-          <div className={styles.main_image}>
-            <CurrentMediaPlayer currentMedia={this.state.currentMedia} />
-          </div>
-          <div className={styles.grid}>
-            <MediaList
-            images={this.state.images}
-            video={this.state.video}
-            changeMedia={this.changeMedia.bind(this)}
-            borderSelect={this.borderSelect.bind(this)}/>
-            <div className={styles.scroll_row}>
-              <div className={styles.scroll_col}>
-                <div className={styles.prev} onClick={this.scrollLeft}>&#9668;</div>
-              </div>
-              <div className={styles.scroll_col}>
-                <div className={styles.next} onClick={this.scrollRight}>&#9658;</div>
+        <div className={styles.col_wrapper}>
+          <div className={styles.left_col}>
+            <div className={styles.main_image}>
+              <CurrentMediaPlayer currentMedia={this.state.currentMedia} />
+            </div>
+            <div className={styles.grid}>
+              <MediaList
+              images={this.state.images}
+              video={this.state.video}
+              changeMedia={this.changeMedia.bind(this)}
+              borderSelect={this.borderSelect.bind(this)}/>
+              <div className={styles.scroll_row}>
+                <div className={styles.scroll_col}>
+                  <div className={styles.prev} onClick={this.scrollLeft}>
+                    <span></span>
+                  </div>
+                </div>
+                <div className={styles.scroll_col}>
+                  <div className={styles.next} onClick={this.scrollRight}>
+                    <span></span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -163,4 +170,6 @@ class MediaWindow extends React.Component {
   }
 }
 
+
 export default MediaWindow;
+
