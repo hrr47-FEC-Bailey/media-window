@@ -18,33 +18,21 @@ font-size: 12px;
   font-family: Motiva Sans, Sans-Serif;
   line-height: 32px;
 }
-/* .col_wrapper {
-  display: inline-block;
+.col_container {
+  display: flex;
   flex-direction: row;
-  justify-content: center;
-} */
-.left_col {
-  float: left;
-  display: block;
-  margin-right: 16px;
-  position: relative;
-  margin-top: 5px;
+  justify-content: flex-start;
 }
 
 .right_col {
   float: left;
-  display: inline-block;
+  /* display: inline-block; */
   margin-right: 16px;
   /* position: relative; */
   margin-top: 5px;
 }
 
-.main_image {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  opacity: 1;
-}
+
 
 .title_image {
   display: flex;
@@ -52,6 +40,110 @@ font-size: 12px;
   justify-content: center;
   opacity: 1;
 
+}
+
+.description {
+  font-size: 13px;
+  line-height: 18px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #c6d4df;
+  padding-right: 16px;
+  padding-top: 7px;
+  padding-bottom: 7px;
+}
+.reviews {
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  line-height: 16px;
+  font-family: Arial, Helvetica, sans-serif;
+
+}
+.reviews_all {
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  line-height: 16px;
+  font-family: Arial, Helvetica, sans-serif;
+  padding-bottom: 7px;
+}
+
+.recent {
+  text-transform: uppercase;
+  /* font-size: 10px; */
+  padding-right: 10px;
+  min-width: 94px;
+  color:#556772 ;
+}
+
+.recent_summary {
+  color: #63bbed;
+  /* font-size: 10px; */
+  padding-right: 10px;
+  min-width: 94px;
+}
+
+.release_date {
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  line-height: 16px;
+  font-family: Arial, Helvetica, sans-serif;
+  padding-bottom: 7px;
+}
+
+.date {
+  color: #8f98a0;
+}
+
+.popular {
+  padding-right: 10px;
+  min-width: 94px;
+  color:#556772 ;
+}
+
+.row_tags {
+  display: flex;
+  flex-direction: row;
+}
+
+.tags {
+  line-height: 19px;
+  padding: 0 7px;
+  color: #5baad8;
+  background-color: rgba( 103, 193, 245, 0.2 );
+  box-shadow: none;
+  margin-right: 2px;
+  border-radius: 2px;
+  cursor: pointer;
+  margin-bottom: 3px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.tags:hover {
+  color: white;
+  background-color: #779abd;
+}
+
+
+
+.left_col {
+  float: left;
+  /* display: block; */
+  margin-right: 16px;
+  /* position: relative; */
+  margin-top: 5px;
+}
+
+
+
+
+.main_image {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  opacity: 1;
 }
 
 .scroll_strip {
@@ -62,7 +154,7 @@ font-size: 12px;
 }
 
 .grid {
-  width: 1202px;
+  width: 940;
   position: relative;
 }
 

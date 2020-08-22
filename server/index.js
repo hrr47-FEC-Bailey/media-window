@@ -6,17 +6,17 @@ const mongoModel = require('../database/index');
 
 const app = express();
 
-// const corsOptions = {
-//   origin: 'http://localhost:3000',
-//   optionsSuccess: 200,
-// };
-app.use(cors());
+const corsOptions = {
+  origin: 'http://localhost:3000',
+  optionsSuccess: 200,
+};
+// app.use(cors());
 
 app.use(bodyParser.urlencoded({extended: true, useUnifiedTopology: true}));
 app.use(bodyParser.json());
 app.use(express.static(__dirname + '/../public'));
 
-app.get('/api/mediaData/:id', (req, res) => {
+app.get('/api/mediaData/:id', cors(corsOptions), (req, res) => {
   let id = req.params.id
   mongoModel.GameModel.findOne({id})
     .then((data) => {

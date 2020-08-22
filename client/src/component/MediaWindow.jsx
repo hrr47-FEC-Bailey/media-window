@@ -6,8 +6,9 @@ import CurrentMediaPlayer from './CurrentMediaPlayer.jsx';
 import MediaList from './MediaList.jsx';
 import Title from './Title.jsx';
 import CurrentTitleImage from './CurrentTitleImage.jsx';
+import CurrentDescription from './CurrentDescription.jsx';
 
-
+const url = '54.215.75.98';
 class MediaWindow extends React.Component {
   constructor(props) {
     super(props);
@@ -32,7 +33,7 @@ class MediaWindow extends React.Component {
   }
 
   getData() {
-    axios.get('http://localhost:3001/api/mediaData/2')
+    axios.get(`http://${url}:3001/api/mediaData/5`)
     .then(({data}) => {
       let imagesArr = [];
       let videoArr = [];
@@ -139,7 +140,7 @@ class MediaWindow extends React.Component {
     return (
       <div className={styles.body}>
         <Title currentGame={this.state.data} />
-        <div className={styles.col_wrapper}>
+        <div className={styles.col_container}>
           <div className={styles.left_col}>
             <div className={styles.main_image}>
               <CurrentMediaPlayer currentMedia={this.state.currentMedia} />
@@ -162,6 +163,42 @@ class MediaWindow extends React.Component {
                   </div>
                 </div>
               </div>
+            </div>
+          </div>
+          <div className={styles.right_col}>
+            <CurrentTitleImage images={this.state.images}/>
+            <div className={styles.description}>
+              <CurrentDescription description={this.state.data.description} />
+            </div>
+            <div className={styles.reviews}>
+              <div className={styles.recent}>Recent Reviews:</div>
+              <div className={styles.recent_summary}>Very Positive</div>
+            </div>
+            <div className={styles.reviews_all}>
+              <div className={styles.recent}>All Reviews:</div>
+              <div className={styles.recent_summary}>Very Positive</div>
+            </div>
+            <div className={styles.release_date}>
+              <div className={styles.recent}>Release Date</div>
+              <div className={styles.date}>Oct 27, 2016</div>
+            </div>
+            <div className={styles.reviews}>
+              <div className={styles.recent}>Developer:</div>
+              <div className={styles.recent_summary}>Bethesda Game Studios</div>
+            </div>
+            <div className={styles.reviews_all}>
+              <div className={styles.recent}>Publisher:</div>
+              <div className={styles.recent_summary}>Bethesda Softworks</div>
+            </div>
+            <div className={styles.reviews}>
+              <div className={styles.popular}>Popular user-defined tags for this product:</div>
+            </div>
+            <div className={styles.row_tags}>
+              <div className={styles.tags}>Open World</div>
+              <div className={styles.tags}>RPG</div>
+              <div className={styles.tags}>Adventure</div>
+              <div className={styles.tags}>Single Player</div>
+              <div className={styles.tags}>+</div>
             </div>
           </div>
         </div>
