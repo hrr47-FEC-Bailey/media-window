@@ -5,7 +5,7 @@ import styles from './styles.css';
 
 
 const MediaList = (props) => (
-  <div className={styles.row}>
+  <div id={styles.row}>
     {props.video.map((video) => (
       <VideoListEntry
       video={video}

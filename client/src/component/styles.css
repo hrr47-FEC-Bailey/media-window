@@ -26,9 +26,7 @@ font-size: 12px;
 
 .right_col {
   float: left;
-  /* display: inline-block; */
   margin-right: 16px;
-  /* position: relative; */
   margin-top: 5px;
 }
 
@@ -70,7 +68,6 @@ font-size: 12px;
 
 .recent {
   text-transform: uppercase;
-  /* font-size: 10px; */
   padding-right: 10px;
   min-width: 94px;
   color:#556772 ;
@@ -78,7 +75,6 @@ font-size: 12px;
 
 .recent_summary {
   color: #63bbed;
-  /* font-size: 10px; */
   padding-right: 10px;
   min-width: 94px;
 }
@@ -130,9 +126,7 @@ font-size: 12px;
 
 .left_col {
   float: left;
-  /* display: block; */
   margin-right: 16px;
-  /* position: relative; */
   margin-top: 5px;
 }
 
@@ -158,25 +152,25 @@ font-size: 12px;
   position: relative;
 }
 
-.row {
+#row {
   overflow: auto;
   white-space: nowrap;
   width: 600px;
 }
 
 
-::-webkit-scrollbar {
+#row::-webkit-scrollbar {
   height: 18px;
   width: 5px;
 }
 
 
-::-webkit-scrollbar-track {
+#row::-webkit-scrollbar-track {
   background: #16202d !important;
   border: 1px solid #16202d !important;
 }
 
-::-webkit-scrollbar-thumb {
+#row::-webkit-scrollbar-thumb {
   width: 10px;
   height: 15px;
   background-color: #434953;
@@ -186,12 +180,12 @@ font-size: 12px;
 }
 
 
-::-webkit-scrollbar-track {
+#row::-webkit-scrollbar-track {
     background: #16202D !important;
     border: 1px solid #16202D !important;
 }
 
-::-webkit-scrollbar-thumb:hover {
+#row::-webkit-scrollbar-thumb:hover {
   background: #417a9b;
 }
 
@@ -210,7 +204,7 @@ font-size: 12px;
   bottom: 100%;
   left: 50%;
   margin-left: -2px;
-  border-width: 2px;
+  border-width: 3px;
   border-style: solid;
   border-color: #c7d5e0;
   display: inline-block;
@@ -219,28 +213,18 @@ font-size: 12px;
   text-decoration: none;
   margin: 4px;
   cursor: pointer;
-
 }
 
-/* .col_border::after{
-  content: " ";
-  position: absolute;
-  left: 50%;
-  margin-left: -5px;
-  border-width: 5px;
-  border-style: solid;
-  border-color: #c7d5e0;
 
-} */
 
 .scroll_row {
   display: flex;
   height: 18px;
 }
-/* vertical-align: middle; */
+
 .scroll_col {
   position: relative;
-  width: 38px;
+  width: 300px;
   border-radius: 3px;
 }
 
@@ -279,6 +263,7 @@ font-size: 12px;
   cursor: pointer;
   color: white;
   background-color: rgba( 35, 60, 81, 0.4 );
+
 }
 
 .next span {
