@@ -179,7 +179,7 @@ class MediaWindow extends React.Component {
               <div className={styles.recent_summary}>Very Positive</div>
             </div>
             <div className={styles.release_date}>
-              <div className={styles.recent}>Release Date</div>
+              <div className={styles.recent}>Release Date:</div>
               <div className={styles.date}>Oct 27, 2016</div>
             </div>
             <div className={styles.reviews}>
