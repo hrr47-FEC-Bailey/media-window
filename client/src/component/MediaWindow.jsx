@@ -33,7 +33,7 @@ class MediaWindow extends React.Component {
   }
 
   getData() {
-    axios.get(`http://${url}:3001/api/mediaData/5`)
+    axios.get(`http://${url}:3001/api/mediaData/14`)
     .then(({data}) => {
       let imagesArr = [];
       let videoArr = [];
