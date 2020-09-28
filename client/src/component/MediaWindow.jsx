@@ -2,13 +2,18 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import axios from 'axios';
 import styles from './styles.css';
+import { createGlobalStyle } from 'styled-components';
 import CurrentMediaPlayer from './CurrentMediaPlayer.jsx';
 import MediaList from './MediaList.jsx';
 import Title from './Title.jsx';
 import CurrentTitleImage from './CurrentTitleImage.jsx';
 import CurrentDescription from './CurrentDescription.jsx';
 
-const url = '54.215.75.98';
+createGlobalStyle`
+*{all: initial;}`
+
+// const url = '54.215.75.98';
+const url = 'localhost';
 class MediaWindow extends React.Component {
   constructor(props) {
     super(props);
@@ -33,7 +38,7 @@ class MediaWindow extends React.Component {
   }
 
   getData() {
-    axios.get(`http://${url}:3001/api/mediaData/14`)
+    axios.get(`http://${url}:3001/api/mediaData/1`)
     .then(({data}) => {
       let imagesArr = [];
       let videoArr = [];

@@ -1,15 +1,16 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const path = require('path');
 const cors = require('cors');
 
 const mongoModel = require('../database/index');
 
 const app = express();
 
-// const corsOptions = {
-//   origin: 'http://localhost:3000',
-//   optionsSuccess: 200,
-// };
+const corsOptions = {
+  origin: 'http://localhost:3001',
+  optionsSuccess: 200,
+};
 app.use(cors());
 
 app.use(bodyParser.urlencoded({extended: true, useUnifiedTopology: true}));

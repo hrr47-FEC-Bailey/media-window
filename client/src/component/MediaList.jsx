@@ -2,6 +2,9 @@ import React from 'react';
 import ImageListEntry from './ImageListEntry.jsx';
 import VideoListEntry from './VideoListEntry.jsx';
 import styles from './styles.css';
+import { createGlobalStyle } from 'styled-components';
+createGlobalStyle`
+*{all: initial;}`
 
 
 const MediaList = (props) => (
