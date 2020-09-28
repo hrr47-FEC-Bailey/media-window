@@ -21,7 +21,7 @@ function generateData() {
     let i = 0;
     let j = 0;
     while (i < 6) {
-      let photo = `https://baileymediaplayer.s3-us-west-1.amazonaws.com/images/image${imageId}.jpeg`
+      let photo = `https://fecbailey.s3-us-west-1.amazonaws.com/image${imageId}.jpeg`
       photoArr.push(photo);
       i++;
       imageId++;
