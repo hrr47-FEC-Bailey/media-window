@@ -35,6 +35,8 @@ class MediaWindow extends React.Component {
     this.borderSelect = this.borderSelect.bind(this);
     this.carouselScrollRight = this.carouselScrollRight.bind(this);
     this.carouselScrollLeft = this.carouselScrollLeft.bind(this);
+    this.changeImage = this.changeImage.bind(this);
+    this.exitImage = this.exitImage.bind(this);
   }
 
   componentDidMount() {
@@ -71,6 +73,12 @@ class MediaWindow extends React.Component {
     });
   }
 
+  changeImage(image) {
+    this.setState({
+      currentImage: image,
+    });
+  }
+
   scrollLeft() {
     let current = this.state.currentMedia;
     let arr = current.split('.');
@@ -81,7 +89,7 @@ class MediaWindow extends React.Component {
       }
     }
     let lastIndex = this.state.images.length - 1;
-    if (arr.indexOf('jpeg') > -1) {
+    if (arr.indexOf('jpeg') > -1 || arr.indexOf('jpg') > -1) {
       if (currentIndex === 0) {
         this.borderSelect(this.state.video[0].video);
         this.changeMedia(this.state.video[0].video);
@@ -105,7 +113,7 @@ class MediaWindow extends React.Component {
       }
     }
     let lastIndex = this.state.images.length - 1;
-    if (arr.indexOf('jpeg') > -1) {
+    if (arr.indexOf('jpeg') > -1 || arr.indexOf('jpg') > -1) {
       if (this.state.images[currentIndex].image !== this.state.images[lastIndex].image) {
         this.borderSelect(this.state.images[currentIndex + 1].image);
         this.changeMedia(this.state.images[currentIndex + 1].image);
@@ -152,20 +160,51 @@ class MediaWindow extends React.Component {
     });
   }
 
-  carouselScrollRight() {
-    console.log('FIX ME')
-  }
-
   carouselScrollLeft() {
-    console.log('FIX ME')
+    let current = this.state.currentImage;
+    let arr = current.split('.');
+    let currentIndex;
+    for (var i = 0; i < this.state.images.length; i++) {
+      if (current === this.state.images[i].image) {
+        currentIndex = i;
+      }
+    }
+    let lastIndex = this.state.images.length - 1;
+    if (currentIndex === 0) {
+      this.changeImage(this.state.images[lastIndex].image);
+    } else {
+      this.changeImage(this.state.images[currentIndex - 1].image);
+    }
   }
 
+  carouselScrollRight() {
+    let current = this.state.currentImage;
+    let arr = current.split('.');
+    let currentIndex;
+    for (var i = 0; i < this.state.images.length; i++) {
+      if (current === this.state.images[i].image) {
+        currentIndex = i;
+      }
+    }
+    let lastIndex = this.state.images.length - 1;
+    if (currentIndex === lastIndex) {
+      this.changeImage(this.state.images[0].image);
+    } else {
+      this.changeImage(this.state.images[currentIndex + 1].image);
+    }
+  }
+
+  exitImage() {
+    this.setState({
+      activeImage: false,
+    })
+  }
 
   render() {
     return (
       <div>
         <div>
-          <MainImage currentImage={this.state.currentImage} activeImage={this.state.activeImage} carouselScrollLeft={this.carouselScrollLeft} carouselScrollRight={this.carouselScrollRight}/>
+          <MainImage currentImage={this.state.currentImage} activeImage={this.state.activeImage} carouselScrollLeft={this.carouselScrollLeft} carouselScrollRight={this.carouselScrollRight} exitImage={this.exitImage}/>
         </div>
         <div className={styles.body}>
           <Title currentGame={this.state.data} />

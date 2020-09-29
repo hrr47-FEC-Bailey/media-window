@@ -10,7 +10,7 @@ const MainImage = (props) => {
     return (
       <div>
         <div>
-          <div className={styles.carousel_background}></div>
+          <div className={styles.carousel_background} onClick={() => {props.exitImage()}}></div>
         </div>
         <div className={styles.carousel_image_container}>
           <div className={styles.carousel_content}>
@@ -21,7 +21,7 @@ const MainImage = (props) => {
               </div>
             </div>
             <div>
-              <div className={styles.carousel_next} onClick={() => { props.CarouselScrollRight()}}>
+              <div className={styles.carousel_next} onClick={() => { props.carouselScrollRight()}}>
                 <span>Next</span>
               </div>
             </div>
