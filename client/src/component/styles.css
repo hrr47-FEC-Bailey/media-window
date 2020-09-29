@@ -134,6 +134,7 @@ font-size: 12px;
 
 
 .main_image {
+  cursor: pointer;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -181,11 +182,6 @@ font-size: 12px;
   background-clip: padding-box !important;
 }
 
-
-.row::-webkit-scrollbar-track {
-    background: #16202D !important;
-    border: 1px solid #16202D !important;
-}
 
 .row::-webkit-scrollbar-thumb:hover {
   background: #417a9b !important;
@@ -340,6 +336,7 @@ font-size: 12px;
 
 
 .carousel_next {
+  cursor: pointer;
   position: relative;
   padding: 5px;
   background-color: #434953;
@@ -363,6 +360,7 @@ font-size: 12px;
 }
 
 .carousel_prev {
+  cursor: pointer;
   position: relative;
   padding: 5px;
   background-color: #434953;
