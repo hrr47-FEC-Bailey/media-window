@@ -1,9 +1,5 @@
 import React from 'react';
 import styles from './styles.css';
-import { createGlobalStyle } from 'styled-components';
-createGlobalStyle`
-*{all: initial;}`
-
 
 const ImageListEntry = (props) => {
   if (props.image.isActive === true) {

@@ -27,8 +27,7 @@ app.get('/api/mediaData/:id', (req, res) => {
       console.log('ERROR in get request: ', err);
       res.status(500).send('ERROR');
     });
-})
-
+});
 
 const port = process.env.PORT || 3001;
 

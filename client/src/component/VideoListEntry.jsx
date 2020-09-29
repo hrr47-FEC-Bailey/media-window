@@ -1,8 +1,6 @@
 import React from 'react';
 import styles from './styles.css';
-import { createGlobalStyle } from 'styled-components';
-createGlobalStyle`
-*{all: initial;}`
+
 
 const VideoListEntry = (props) => {
   if (props.video.isActive === true) {
@@ -19,7 +17,6 @@ const VideoListEntry = (props) => {
     )
   }
 }
-
 
 
 export default VideoListEntry;
