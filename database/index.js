@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/media-window', {useNewUrlParser: true});
+mongoose.connect('mongodb://localhost/media-window', {useNewUrlParser: true, useUnifiedTopology: true });
 
 const gameSchema = new mongoose.Schema({
   id: Number,
