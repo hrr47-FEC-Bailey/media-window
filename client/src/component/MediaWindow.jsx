@@ -206,7 +206,7 @@ class MediaWindow extends React.Component {
         <div>
           <MainImage currentImage={this.state.currentImage} activeImage={this.state.activeImage} carouselScrollLeft={this.carouselScrollLeft} carouselScrollRight={this.carouselScrollRight} exitImage={this.exitImage}/>
         </div>
-        <div className={styles.body}>
+        <div className={styles.main_body}>
           <Title currentGame={this.state.data} />
           <div className={styles.col_container}>
             <div className={styles.left_col}>
